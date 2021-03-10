@@ -17,14 +17,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         btn_jugar.layer.cornerRadius = btn_jugar.bounds.size.width/2;
-        
         // Do any additional setup after loading the view.
     }
 
     @IBAction func AccionJugar(_ sender: Any) {
         let jugadortxt = tf_jugador.text!
+        var users:[User]
         
         if(jugadortxt.count > 0){
             
@@ -32,7 +31,6 @@ class ViewController: UIViewController {
             
             do{
                 if let data = defaults.object(forKey: "users") as?Data{
-            
                     let decoder = JSONDecoder()
                     let usersd = try decoder.decode([User].self, from: data)
                     
@@ -41,17 +39,16 @@ class ViewController: UIViewController {
                         if user.username == jugadortxt{
                             logg = true
                         }
-                        
                     }
                     
                     if logg {
                         self.alertDefault(for: "Lo siento", and: "Usuario ya registrado")
                     }else{
                         let user = User(jugadortxt)
-                        let users:[User] = [user]
+                        users.append(user)
                         
                         let json = JSONEncoder()
-                                                let data = try json.encode(users)
+                        let data = try json.encode(users)
                         defaults.set(data,forKey: "users")
                         defaults.synchronize()
                         print("Registrado")

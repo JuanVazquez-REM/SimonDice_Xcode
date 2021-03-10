@@ -13,8 +13,9 @@ extension UIButton{
         UIView.animate(withDuration: 0.1){
             self.transform = CGAffineTransform(translationX: 0, y: -10)
         } completion: { (completion) in
-            Ui
-            
+            UIView.animate(withDuration: 0.1){
+                self.alpha = 1
+            }
         }
     }
 }

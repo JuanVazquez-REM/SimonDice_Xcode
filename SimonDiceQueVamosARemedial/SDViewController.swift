@@ -18,21 +18,18 @@ class SDViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        let number = Int.random(in: 1..<4)
+
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
+
+        dispatch_after(time, dispatch_get_main_queue()){
+            var juego:
+            while juego {
+                
+            }
+            let number = Int.random(in: 0..<4)
             
-        switch number {
-            case 1:
-            print("1")
-            case 2:
-            print("2")
-            case 3:
-            print("3")
-            case 4:
-            print("4")
-        default:
-            print("que paso xd")
         }
+        
 
         // Do any additional setup after loading the view.
     }
