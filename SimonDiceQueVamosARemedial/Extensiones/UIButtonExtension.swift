@@ -9,13 +9,17 @@
 import UIKit
 
 extension UIButton{
+    
     func shine(){
-        UIView.animate(withDuration: 0.1){
-            self.transform = CGAffineTransform(translationX: 0, y: -10)
-        } completion: { (completion) in
-            UIView.animate(withDuration: 0.1){
+        
+        UIView.animate(withDuration: 0.1, animations: {
+            self.alpha = 0.3
+        }) { (completion) in
+            UIView.animate(withDuration: 0.1) {
                 self.alpha = 1
             }
         }
+        
     }
+    
 }

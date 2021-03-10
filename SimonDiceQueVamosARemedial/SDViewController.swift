@@ -10,29 +10,72 @@ import UIKit
 
 class SDViewController: UIViewController {
 
-    @IBOutlet var btn_amarillo: UIView!
+    @IBOutlet weak var btn_amarillo: UIButton!
     @IBOutlet weak var btn_rojo: UIButton!
     @IBOutlet weak var btn_verde: UIButton!
     @IBOutlet weak var btn_azul: UIButton!
-    @IBOutlet weak var label_player: UILabel!
+    @IBOutlet weak var txt_username: UITextView!
+    @IBOutlet weak var txt_score: UITextView!
+    
+    let defaults = UserDefaults.standard
+    var buttons: [UIButton] = [UIButton]()
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
-        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
-
-        dispatch_after(time, dispatch_get_main_queue()){
-            var juego:
-            while juego {
-                
-            }
-            let number = Int.random(in: 0..<4)
-            
-        }
-        
-
         // Do any additional setup after loading the view.
+        print("Segunda pantalla")
+        jugar()
+        
     }
+    
+    func jugar(){
+        self.buttons = [btn_amarillo,btn_rojo,btn_verde,btn_azul]
+        
+        do{
+            if let data = self.defaults.object(forKey: "users") as?Data{
+                
+                let decoder = JSONDecoder()
+                let usersd = try decoder.decode([User].self, from: data)
+                print("Users encontrados")
+                
+                let usernow = usersd.last
+                let username = String(usernow?.username ?? "nada")
+                print(username)
+                self.txt_username.text = username
+            }
+        } catch {
+            print("Error al recuperar los users")
+        }
+        var numeros = [Int]()
+        
+        numeros.append(Int.random(in: 0...3))
+        numeros.append(Int.random(in: 0...3))
+        numeros.append(Int.random(in: 0...3))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            let random = Int.random(in: 0...3)
+            
+            switch random {
+            case 0:
+                self.btn_amarillo.shine()
+                break
+            case 1:
+                self.btn_rojo.shine()
+                break
+            case 2:
+                self.btn_verde.shine()
+                break
+            case 3:
+                self.btn_azul.shine()
+                break
+                
+            default:
+                print("ramdom fuera de rango")
+            }
+        }
+    }
+    
+    
     
     
 
@@ -47,3 +90,4 @@ class SDViewController: UIViewController {
     */
 
 }
+
