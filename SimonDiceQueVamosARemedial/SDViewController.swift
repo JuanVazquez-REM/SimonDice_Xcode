@@ -10,6 +10,7 @@ import UIKit
 
 class SDViewController: UIViewController {
 
+    
     @IBOutlet weak var btn_amarillo: UIButton!
     @IBOutlet weak var btn_rojo: UIButton!
     @IBOutlet weak var btn_verde: UIButton!
@@ -19,14 +20,21 @@ class SDViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     var buttons: [UIButton] = [UIButton]()
+    var numeros = [Int]()
+    var numeroscheck = [Int]()
+    var ronda: Int = 0
+    var numrondas: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("Segunda pantalla")
-        jugar()
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.jugar()
+        }
     }
+    
     
     func jugar(){
         self.buttons = [btn_amarillo,btn_rojo,btn_verde,btn_azul]
@@ -46,15 +54,76 @@ class SDViewController: UIViewController {
         } catch {
             print("Error al recuperar los users")
         }
-        var numeros = [Int]()
         
-        numeros.append(Int.random(in: 0...3))
-        numeros.append(Int.random(in: 0...3))
-        numeros.append(Int.random(in: 0...3))
+        self.siguienteRonda()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            let random = Int.random(in: 0...3)
+    }
+    
+    @IBAction func accionAmarillo(_ sender: Any) {
+        self.numeroscheck.append(0)
+        
+        for i in 0..<numeros.count{
+            if (self.numeroscheck[i] == numeros[i]){
+                print("muy bien")
+                numeros.removeAll()
+                numeroscheck.removeAll()
+                
+            }else{
+                self.alertDefault(for: "Lo siento", and: "Haz perdido")
+            }
+        }
+    }
+    
+    @IBAction func accionRojo(_ sender: Any) {
+        self.numeroscheck.append(1)
+        
+        for i in 0..<numeros.count{
+            if (self.numeroscheck[i] == numeros[i]){
+                print("muy bien")
+                numeros.removeAll()
+                numeroscheck.removeAll()
+                
+            }else{
+                self.alertDefault(for: "Lo siento", and: "Haz perdido")
+            }
+        }
+    }
+    
+    @IBAction func accionVerde(_ sender: Any) {
+        self.numeroscheck.append(2)
+        
+        for i in 0..<numeros.count{
             
+            if (self.numeroscheck[i] == numeros[i]){
+                print("muy bien")
+                numeros.removeAll()
+                numeroscheck.removeAll()
+            }
+            self.alertDefault(for: "Lo siento", and: "Haz perdido")
+            
+        }
+    }
+    
+    @IBAction func accionAzul(_ sender: Any) {
+        self.numeroscheck.append(3)
+        
+        for num in 0..<numeros.count{
+            if self.numeroscheck[num] == numeros[num]{
+                print("muy bien")
+                numeros.removeAll()
+                numeroscheck.removeAll()
+            }else{
+                self.alertDefault(for: "Lo siento", and: "Haz perdido")
+            }
+        }
+    }
+    
+    func siguienteRonda(){
+        let random = Int.random(in: 0...3)
+        self.numeros.append(random)
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             switch random {
             case 0:
                 self.btn_amarillo.shine()
@@ -68,11 +137,12 @@ class SDViewController: UIViewController {
             case 3:
                 self.btn_azul.shine()
                 break
-                
             default:
-                print("ramdom fuera de rango")
+                print("random fuera de rango")
             }
+            
         }
+        
     }
     
     
@@ -89,5 +159,16 @@ class SDViewController: UIViewController {
     }
     */
 
+}
+
+extension UIViewController {
+    func alertDefault (for title: String, and description: String){
+        let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
 

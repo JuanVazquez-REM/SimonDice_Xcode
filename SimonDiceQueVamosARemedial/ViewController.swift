@@ -85,7 +85,7 @@ class ViewController: UIViewController {
     }
 }
 extension UIViewController {
-    func alertDefault (for title: String, and description: String){
+    func alertDefault1 (for title: String, and description: String){
         let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action) in
             alert.dismiss(animated: true, completion: nil)

@@ -134,6 +134,9 @@
                                 <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="accionAmarillo:" destination="fCN-S5-xXU" eventType="touchUpInside" id="Du0-it-UGj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQs-mY-HK3">
                                 <rect key="frame" x="31" y="408.5" width="186" height="185.5"/>
@@ -141,6 +144,9 @@
                                 <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="accionVerde:" destination="fCN-S5-xXU" eventType="touchUpInside" id="vpl-0Y-7Ws"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWr-0c-c5l">
                                 <rect key="frame" x="217.5" y="408.5" width="186" height="185.5"/>
@@ -148,6 +154,9 @@
                                 <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="accionAzul:" destination="fCN-S5-xXU" eventType="touchUpInside" id="UAr-uP-Mwg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgX-uX-OBO">
                                 <rect key="frame" x="217.5" y="223" width="186" height="185.5"/>
@@ -155,18 +164,26 @@
                                 <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="accionRojo:" destination="fCN-S5-xXU" eventType="touchUpInside" id="2Rf-CZ-roO"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SGI-xM-CsH">
-                                <rect key="frame" x="114" y="85" width="264" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SGI-xM-CsH">
+                                <rect key="frame" x="127" y="89.5" width="264" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-WS-y83">
-                                <rect key="frame" x="114" y="120" width="264" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tyb-B1-GSw">
+                                <rect key="frame" x="283" y="773.5" width="124" height="32"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yXC-WS-y83">
+                                <rect key="frame" x="127" y="124" width="264" height="32"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -175,14 +192,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="SGI-xM-CsH" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.637681" id="0b9-H9-SZr"/>
                             <constraint firstItem="aNQ-oP-fTT" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="15:8" id="0rt-E0-NTi"/>
                             <constraint firstItem="WMY-OL-8M9" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="3:9" id="5A0-xH-Duh"/>
+                            <constraint firstItem="yXC-WS-y83" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.0380048" id="8a2-he-Amg"/>
                             <constraint firstItem="cgX-uX-OBO" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.45" id="9qq-fR-NBf"/>
+                            <constraint firstItem="yXC-WS-y83" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.637681" id="C0B-Pm-pS1"/>
+                            <constraint firstItem="SGI-xM-CsH" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:12" id="C4h-1R-q5p"/>
                             <constraint firstItem="aNQ-oP-fTT" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="0.6" id="Ej0-tc-ek0"/>
                             <constraint firstItem="kQs-mY-HK3" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.449275" id="FQL-fw-bPd"/>
                             <constraint firstItem="mWr-0c-c5l" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.220309" id="GYR-Bj-7rY"/>
+                            <constraint firstItem="tyb-B1-GSw" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.3" id="I1a-M1-UjM"/>
                             <constraint firstItem="mWr-0c-c5l" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:10" id="JLT-hO-zhS"/>
                             <constraint firstItem="hXf-qg-sIK" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="15:8" id="KeL-sc-6fK"/>
+                            <constraint firstItem="yXC-WS-y83" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="3:9" id="MoF-Py-XSv"/>
                             <constraint firstItem="Gw3-5X-I00" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="15:20" id="RBX-rA-PAB"/>
                             <constraint firstItem="TYg-QF-5fh" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="3:8" id="RgZ-Gk-Vt6"/>
                             <constraint firstItem="hXf-qg-sIK" firstAttribute="leading" secondItem="aNQ-oP-fTT" secondAttribute="trailing" constant="9.5" id="UGo-Gq-V7V"/>
@@ -191,13 +214,19 @@
                             <constraint firstItem="mWr-0c-c5l" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="15:12.6" id="XOI-R9-1wQ"/>
                             <constraint firstItem="kQs-mY-HK3" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:25" id="ZvT-fs-Dxk"/>
                             <constraint firstItem="kQs-mY-HK3" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="15:12.6" id="aRB-pP-hYD"/>
+                            <constraint firstItem="SGI-xM-CsH" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="3:12" id="bi1-WA-erc"/>
+                            <constraint firstItem="tyb-B1-GSw" firstAttribute="centerY" secondItem="Bwi-mW-X2R" secondAttribute="centerY" multiplier="15:8" id="ctv-pu-yz9"/>
+                            <constraint firstItem="yXC-WS-y83" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:12" id="dhX-tK-EEr"/>
+                            <constraint firstItem="tyb-B1-GSw" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.0380048" id="ee3-Dl-O5E"/>
                             <constraint firstItem="hXf-qg-sIK" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:14" id="epO-5b-B4z"/>
                             <constraint firstItem="mWr-0c-c5l" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.449275" id="gZj-2U-dmI"/>
                             <constraint firstItem="Gw3-5X-I00" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.449275" id="ghF-fa-eF1"/>
+                            <constraint firstItem="SGI-xM-CsH" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.0380048" id="mHK-wS-eII"/>
                             <constraint firstItem="kQs-mY-HK3" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.220309" id="n1G-yb-Zad"/>
                             <constraint firstItem="Gw3-5X-I00" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.220309" id="onZ-ox-hwH"/>
                             <constraint firstItem="aNQ-oP-fTT" firstAttribute="width" secondItem="Bwi-mW-X2R" secondAttribute="width" multiplier="0.15" id="q0t-K7-Eyh"/>
                             <constraint firstItem="Gw3-5X-I00" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:25" id="qOB-tG-c0d"/>
+                            <constraint firstItem="tyb-B1-GSw" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:9" id="vRT-7t-3uG"/>
                             <constraint firstItem="aNQ-oP-fTT" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.15" id="vaV-1d-h8r"/>
                             <constraint firstItem="cgX-uX-OBO" firstAttribute="centerX" secondItem="Bwi-mW-X2R" secondAttribute="centerX" multiplier="15:10" id="xmB-Yy-sGZ"/>
                             <constraint firstItem="cgX-uX-OBO" firstAttribute="height" secondItem="Bwi-mW-X2R" secondAttribute="height" multiplier="0.22" id="zQD-Po-Tpl"/>
@@ -207,7 +236,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7VY-Yd-Au7"/>
                     <connections>
-                        <outlet property="btn_amarillo" destination="Bwi-mW-X2R" id="U28-mQ-tmn"/>
+                        <outlet property="btn_amarillo" destination="Gw3-5X-I00" id="44V-Ie-JnS"/>
                         <outlet property="btn_azul" destination="mWr-0c-c5l" id="c7b-3F-mfV"/>
                         <outlet property="btn_rojo" destination="cgX-uX-OBO" id="X6N-J2-b2d"/>
                         <outlet property="btn_verde" destination="kQs-mY-HK3" id="mFJ-IX-upd"/>
